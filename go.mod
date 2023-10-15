@@ -1,4 +1,4 @@
-module github.com/mochi-mqtt/server/v2
+module github.com/erditona/be_use
 
 go 1.21
 
@@ -9,6 +9,7 @@ require (
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/gorilla/websocket v1.5.0
 	github.com/jinzhu/copier v0.3.5
+	github.com/mochi-mqtt/server/v2 v2.4.1
 	github.com/rs/xid v1.4.0
 	github.com/stretchr/testify v1.7.1
 	github.com/timshannon/badgerhold v1.0.0
@@ -26,8 +27,6 @@ require (
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
 	github.com/dustin/go-humanize v1.0.0 // indirect
 	github.com/golang/protobuf v1.5.0 // indirect
-	github.com/golang/snappy v0.0.3 // indirect
-	github.com/google/go-cmp v0.5.8 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/yuin/gopher-lua v0.0.0-20210529063254-f4c35e4016d9 // indirect
