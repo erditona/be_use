@@ -5,7 +5,9 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/aiteung/atdb"
 	"github.com/whatsauth/watoken"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 func GCFPostHandler(PASETOPRIVATEKEYENV, MONGOCONNSTRINGENV, dbname, collectionname string, r *http.Request) string {
@@ -37,4 +39,11 @@ func GCFPostHandler(PASETOPRIVATEKEYENV, MONGOCONNSTRINGENV, dbname, collectionn
 func GCFReturnStruct(DataStuct any) string {
 	jsondata, _ := json.Marshal(DataStuct)
 	return string(jsondata)
+}
+
+func InsertUser(db *mongo.Database, collection string, userdata User) string {
+	hash, _ := HashPassword(userdata.Password)
+	userdata.Password = hash
+	atdb.InsertOneDoc(db, collection, userdata)
+	return "Ini username : " + userdata.Username + "ini password : " + userdata.Password
 }
